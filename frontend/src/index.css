@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom calming wellness color palette */
+  --color-wellness-mint: #e8f5e9;     /* Background accents, fresh & calm */
+  --color-wellness-sage: #81c784;     /* Primary buttons, active states */
+  --color-wellness-slate: #374151;    /* Deep text for high readability */
+  --color-wellness-lavender: #f3e5f5; /* Secondary accents, reflection areas */
+  --color-wellness-sky: #e1f5fe;      /* Card backgrounds, peaceful tone */
+
+  /* Custom animation for smooth UI rendering */
+  --animate-fade-in: fadeIn 0.5s ease-out;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
