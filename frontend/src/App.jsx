@@ -9,6 +9,7 @@ import Register from './pages/Register';
 import MoodTracker from './pages/MoodTracker';
 import Journal from './pages/Journal';
 import Dashboard from './pages/Dashboard';
+import ChatBot from './pages/ChatbotPage';
 
 function ProtectedRoute({ children }) {
   const { token, loading } = useContext(WellnessContext);
@@ -28,6 +29,7 @@ function AppContent() {
           <Route path="/mood" element={<ProtectedRoute><MoodTracker /></ProtectedRoute>} />
           <Route path="/journal" element={<ProtectedRoute><Journal /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/chat" element={<ProtectedRoute><ChatBot /></ProtectedRoute>} />
         </Routes>
       </main>
       <Footer />

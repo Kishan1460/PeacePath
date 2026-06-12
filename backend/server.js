@@ -20,6 +20,15 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+// home route 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Mental Wellness API is running',
+    environment: process.env.NODE_ENV,
+  });
+});
+
 // API Entry Routes
 app.use('/auth', authRoutes);
 app.use('/moods', moodRoutes);
