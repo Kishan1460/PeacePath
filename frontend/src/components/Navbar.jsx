@@ -53,6 +53,7 @@ export default function Navbar() {
               <Link to="/mood" className={isActive('/mood')}>Moods</Link>
               <Link to="/journal" className={isActive('/journal')}>Journals</Link>
               <Link to="/dashboard" className={isActive('/dashboard')}>Dashboard</Link>
+              <Link to="/chat" className={isActive('/chat')}>AI Assistant</Link>
               <button onClick={handleLogout} className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-xl text-xs font-semibold cursor-pointer transition-all">
                 Sign Out
               </button>
@@ -77,6 +78,7 @@ export default function Navbar() {
               <Link to="/mood" onClick={closeMenu} className={`pb-2 border-b border-gray-50 ${isActive('/mood')}`}>Moods</Link>
               <Link to="/journal" onClick={closeMenu} className={`pb-2 border-b border-gray-50 ${isActive('/journal')}`}>Journals</Link>
               <Link to="/dashboard" onClick={closeMenu} className={`pb-2 border-b border-gray-50 ${isActive('/dashboard')}`}>Dashboard</Link>
+              <Link to="/chat" className={isActive('/chat')}>AI Assistant</Link>
               <button onClick={handleLogout} className="w-full text-center bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 rounded-xl text-sm font-semibold cursor-pointer transition-all">
                 Sign Out
               </button>
