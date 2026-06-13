@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { WellnessContext } from '../context/WellnessContext';
+import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const { token, logout } = useContext(WellnessContext);
@@ -25,7 +26,11 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex justify-between items-center h-16">
         {/* Brand Logo */}
         <Link to="/" onClick={closeMenu} className="text-xl font-bold text-emerald-700 tracking-tight flex items-center gap-2 select-none">
-          🌱 HealthTech
+          <img 
+            src={logo} 
+            alt="Peace Path Logo" 
+            className="h-14 w-auto object-contain object-left scale-125 origin-left transition-transform duration-200"
+          />
         </Link>
 
         {/* Hamburger Menu Toggle Button (Visible on mobile/tablet screens only) */}

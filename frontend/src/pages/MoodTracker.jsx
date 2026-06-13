@@ -44,10 +44,7 @@ export default function MoodTracker() {
 
   return (
     <div className="max-w-5xl mx-auto space-y-8 animate-fade-in px-2">
-      {/* 
-        CHANGED: Shifted main breakpoint to lg-grid instead of md-grid.
-        This prevents cards from becoming squished columns on small laptops/tablets.
-      */}
+   
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         {/* Input Card Form */}
@@ -55,11 +52,7 @@ export default function MoodTracker() {
           <div>
             <h2 className="text-2xl font-bold mb-6">How are you feeling today?</h2>
             
-            {/* 
-              FIXED DESIGN SYSTEM GRID:
-              No matter the size, emojis now stick to a uniform 5-column grid track layout.
-              They scale seamlessly down together without breaking positions or splitting rows.
-            */}
+          
             <div className="grid grid-cols-5 gap-2 sm:gap-4 w-full justify-items-center">
               {MOODS.map((m) => (
                 <button 
@@ -93,10 +86,9 @@ export default function MoodTracker() {
           </div>
         </form>
 
-        {/* History Log Feed Display */}
         <div className="bg-white p-6 rounded-2xl shadow-xs border border-gray-100 flex flex-col space-y-4">
           <h2 className="text-xl font-bold">Mood Tracking Log Feed</h2>
-          <div className="overflow-y-auto max-h-[360px] space-y-3 pr-1">
+          <div className="overflow-y-auto max-h-90 space-y-3 pr-1">
             {history.length === 0 ? (
               <p className="text-sm text-gray-400 italic">No cloud metrics saved yet.</p>
             ) : (

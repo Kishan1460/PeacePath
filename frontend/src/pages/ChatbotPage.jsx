@@ -11,7 +11,9 @@ export default function ChatBot() {
   const chatEndRef = useRef(null);
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messages.length > 1 || isTyping) {
+      chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, [messages, isTyping]);
 
   const handleSendMessage = async (e) => {
@@ -46,7 +48,7 @@ export default function ChatBot() {
       </div>
 
       {/* Conversation Thread Window */}
-      <div className="flex-grow p-4 overflow-y-auto space-y-4 bg-gray-50/50">
+      <div className="grow p-4 overflow-y-auto space-y-4 bg-gray-50/50">
         {messages.map((m, index) => (
           <div key={index} className={`flex ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
             <div className={`max-w-[80%] px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-xs ${
@@ -77,7 +79,7 @@ export default function ChatBot() {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Share what is on your mind..."
           disabled={isTyping}
-          className="flex-grow p-3 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-emerald-500 text-sm disabled:bg-gray-50"
+          className="grow p-3 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-emerald-500 text-sm disabled:bg-gray-50"
         />
         <button 
           type="submit" 
